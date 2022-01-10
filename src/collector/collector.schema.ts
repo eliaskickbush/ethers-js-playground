@@ -30,6 +30,9 @@ export const EventSchema = new Schema({
   tokens: {
     type: Number
   },
+  tokenName: {
+    type: String,
+  }
 });
 
 

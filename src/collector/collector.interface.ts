@@ -8,6 +8,7 @@ export interface Event extends EventKey {
   event: String,
   amount: Number
   tokens: Number
+  tokenName: String,
 }
 
 export interface SupplyKey {
