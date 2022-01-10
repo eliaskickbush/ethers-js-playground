@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
+import { Supply } from './collector.interface';
 import { CollectorService } from './collector.service';
 
 
@@ -7,8 +8,8 @@ export class CollectorController {
 
     constructor(private collectorService: CollectorService) {}
 
-    @Get('get-supply-points')
-    findAll(): string {
-        return 'This action returns all supply points';
+    @Get('/lastday/:token/:event', )
+    async findAll(@Param('token') token: string, @Param('event') event: string): Promise<Array<Supply>> {
+        return await this.collectorService.fetchSupplyPointsLastDay(token, event)
     }
 }

@@ -271,4 +271,17 @@ export class CollectorService implements OnModuleInit {
       }
     }
   }
+
+  async fetchSupplyPointsLastDay(symbol: string, event: string): Promise<Array<Supply>> {
+    // Get current date in UTC
+    let now_utc = moment().utc();
+    // Go to day before
+    let day_before = now_utc.clone();
+    day_before.subtract(1,'d');
+    // Get beginning and end of day before
+    let beginning_day_before = day_before.clone().startOf('day').unix() * 1000;
+    let beginning_today = now_utc.clone().startOf('day').unix() * 1000;
+    return await this.supplyModel.scan().filter('token').eq(symbol).filter('event').eq(event).filter('timestamp').between(beginning_day_before, beginning_today).exec();
+  }
+
 }
