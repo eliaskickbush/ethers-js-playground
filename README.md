@@ -25,7 +25,7 @@ $ npm run ddb:start
 $ npm run start:dev
 ```
 
-# Trying the app
+## Trying the app
 
 Use cURL, or any HTTP capable client.
 
