@@ -1,4 +1,4 @@
-# Backend Task - Advanced Blockchain
+# Example Ethers.js API
 
 This repo contains the solution to the given [backend task](https://abag-tasks.notion.site/abag-tasks/DeFi-Web2-Backend-4de68fc1b2854251a25a4f4de5ec0386) for the backend engineer role at Advanced Blockchain.
 
